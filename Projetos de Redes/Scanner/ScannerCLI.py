@@ -3,7 +3,7 @@ import socket
 
 urlIP = input("Insira o IP ou URL: ").replace("https://" , "").replace("http://" , "")
 print()
-portas = [porta for porta in range(1 , 50)]
+portas = [porta for porta in range(1 , 51)]
 
 try:
     ip_real = socket.gethostbyname(urlIP)
