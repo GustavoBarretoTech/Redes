@@ -8,9 +8,8 @@ try:
                           text=True)
     
     if "1 received" in ping.stdout:
-        print(f"----- ALVO VIVO! Iniciando varredura de portas -----\n")
+        print("\033[32m-----ALVO VIVO! Iniciando varredura-----\033[0m\n")
         
-        # -F para ser rápido, -sV para pegar as versões
         nmap = subprocess.run(f"nmap -F -sV {ip_metasploitable}",
                               shell=True,
                               capture_output=True,
@@ -18,10 +17,10 @@ try:
         
         print(nmap.stdout)
     else:
-        print("Alvo não respondeu ao ping.")
+        print("\033[31mAlvo não respondeu ao ping.\033[0m")
 
 except Exception as e:
     print(f"Ocorreu um erro: {e}")
     
 finally:
-    print("\nProcesso Finalizado!")
+    print("\nScan Finalizado!")
